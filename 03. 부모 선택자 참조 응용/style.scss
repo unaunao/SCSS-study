@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+body {
+  font-family:'Montserrat', sans-serif;
+}
+// 공유된 class name 앞부분 SCSS '&'받아와서 사용하는 법
+.font {
+  &-large{
+    font-size: 60px;
+    color: crimson;
+    text-transform: uppercase;
+  }
+  &-medium {
+    font-size: 40px;
+    color: yellowgreen;
+  }
+  &-small {
+    font-size: 20px;
+    color: royalblue;
+  }
+}
