@@ -1,0 +1,40 @@
+/* css tag name이 여러개 일때 한꺼번에 사용하기*/
+
+/* .frame {
+  margin: 15px;
+  .btn {
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    &.confirm {
+      background-color: yellowgreen;
+    }
+    &.warning {
+      background-color: crimson;
+    }
+  }
+} */
+
+/* 테그에 선택자로 만들기 */
+
+.frame {
+  margin: 15px;
+}
+/* 재활용이 많이 되는 요소들은 부모 요소에서 나와서 정리 할 것 */
+button.btn {
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+button.confirm {
+  background-color: yellowgreen;
+}
+button.warning {
+  background-color: crimson;
+}
