@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color:#222;
+}
+a {
+  text-decoration: none;
+}
+
+/* Button Hover Effects */
+.btn-outer {
+  .btn {
+    color: #fff;
+    text-transform: uppercase;
+    width: 300px;
+    display: block;
+    // border: 1px solid #fff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #555;
+    transition: 0.5s;
+    position:relative;
+    &:hover{
+      background-color: transparent;
+    }
+    &:before,
+    &:after  {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      border: 1px solid #fff;
+      opacity: 0;
+      transition:0.5s;
+    }
+    &:hover:before{
+      transform:rotate(45deg);
+      opacity: 1;
+    }
+    &:hover:after{
+      transform:rotate(-45deg);
+      opacity: 1;
+    }
+  }
+}
