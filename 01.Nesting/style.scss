@@ -18,6 +18,7 @@ body{
   width: 600px;
   display: flex;
   li {
+    display: grid;
     border: 1px solid #000;
     padding: 10px;
     flex:1;
