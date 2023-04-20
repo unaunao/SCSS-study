@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+/* 기존 CSS 형태때와 동일하게 사용 */
+:is(header, section, footer) h1 {
+  font-size: 30px;
+  font-weight: normal;
+}
+:is(header, section, footer) h1::before {
+  content: '';
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: crimson;
+  margin-right: 10px;
+  transform: translateY(3px);
+}
+
+/* 부모요소 선택자부터 내려오면서 사용 가능 */
+/* :is() 선택자는 앞 뒤로 모두 사용 가능하다. 
+    다만 태그만 앞에 부모 없이 선택해서 쓰지 않도록 조심하자(모든 태그에 적용되는 것 방지하기 위해)*/
+.frame :is(p, span) {
+  font-size: 30px;
+}
+
+/* form 요소에서 유용하게 사용됨 */
+
+/* form {
+  & :is(input[type=text], input[type=email], input[type=password]){
+    
+  }
+} */
