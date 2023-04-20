@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+// Variables
+/* 변수 사용 목적 중복되는 요소들 나중에 한방에 수정해야 할 시 한방에 고칠 수 있을 것을 고려함 */
+$color-primary: #222;
+$color-secondary: #333;
+$bgc-item: #eee;
+$portfolio-item-w: 300px;
+$portfolio-item-h: 300px;
+$portfolio-bdrs:10px;
+$portfolio-images-url: "images/";
+
+/* Portfolio */
+.portfolio {
+  padding: 20px;
+  h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .protfolio-items{
+    width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    .portfolio-item{
+      border: 1px solid #000;
+      border-radius: $portfolio-bdrs;
+      width: $portfolio-item-w;
+      height: $portfolio-item-h;
+      background-image: url($portfolio-images-url + "BB175qPx.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:nth-child(1) {
+        background-image: url($portfolio-images-url + "BB175qPx.jpg");
+      }
+      &:nth-child(2) {
+        background-image: url($portfolio-images-url + "AAKoEPA.jpg");
+      }
+      &:nth-child(3) {
+        background-image: url($portfolio-images-url + "AA145dxc.jpg");
+      }
+      &:nth-child(4) {
+        background-image: url($portfolio-images-url + "AA145dxc.jpg");
+      }
+      &:nth-child(5) {
+        background-image: url($portfolio-images-url + "AAKoEPA.jpg");
+      }
+      &:nth-child(6) {
+        background-image: url($portfolio-images-url + "BB175qPx.jpg");
+      }
+      
+    }
+  }
+}
