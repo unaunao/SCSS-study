@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+body {
+  // font-family: 'Raleway', sans-serif;
+  // font-size: 18px;
+  // font-weight: 500;
+  font: {
+    family: 'Raleway', sans-serif;
+    size: 18px;
+    weight: 500;
+  }
+}
+.portfolio p {
+  text: {
+    align: center;
+    overflow: hidden;
+    transform: uppercase;
+  }
+}
