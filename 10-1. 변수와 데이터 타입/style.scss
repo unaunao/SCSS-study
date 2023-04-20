@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+body {
+  font-family: 'Raleway', sana-serif;
+}
+// Variables
+$primary-btn: skyblue;
+$secondary: yellow;
+$waring-btn: red;
+
+/* Buttons */
+.btns {
+  .btn {
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 10px 30px;
+    border-radius: 3px;
+    color:#fff;
+  }
+  .primary {
+    background-color: $primary-btn;
+  }
+  .secondary {
+    background-color: $secondary;
+  }
+  .warning {
+    background-color: $waring-btn;
+  }
+}
