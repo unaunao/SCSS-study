@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+.frame {
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: center;
+  /* 중첩 안에 들어가 있는데 공통으로 사용되는 style 속성으로 들어가야 하는 것
+  가능하면 많이 사용하지 않되 어쩔 수 없을때 사용 -중첩에서 벗어나는 키워드 */
+  @at-root .heading {
+    font-size: 36px;
+    color: crimson;
+    font-weight: normal;
+  }
+}
