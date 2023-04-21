@@ -1,0 +1,13 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+/* css파일을 불러올때는 기존과 같이 사용함 */
+/* @import url("reset.css"); */
+
+/* scss에서 scss를 불러올때 */
+@import "reset";
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
