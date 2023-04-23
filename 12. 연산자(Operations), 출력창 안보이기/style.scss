@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+
+/* Operations */
+$fs: 15px;
+$box-margin: 50px;
+
+/* 
+기존 CSS에서 연산자 사용법
+'calc()안에 연산 내용 넣어줌' 
+font-size: calc(15px * 2);
+*/
+
+
+.frame {
+  border: 1px solid #000;
+  /* 더하기, 빼기, 곱하기는 있어도 없어도 문제 없음 */
+  /* 나눌때는 반드시 괄호 처리 해야함
+  뒤에 나누는 숫자에는 'px'넣지 않음 */
+  /* 나머지 값 구할 때는 '%' 사용함  */
+  padding: (50px / 10);
+  margin: $box-margin / 2;
+  h1 { 
+    font-size: $fs * 3;
+  }
+  p {
+    border: 1px solid #000;
+    margin: $box-margin / 3;
+    /* $fs를 기준으로 해서 1.5배 키울 것임 */
+    font-size: $fs * 1.5;
+  }
+}
