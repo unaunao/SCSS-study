@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+/* 
+사용 방식
+믹스인에 인수 사용
+
+@mixin 믹스인 이름($매개변수, $매개변수) {
+  CSS 속성: 인수1 인수2 인수3;
+  (css 속성 중에서 값이 여러개 있는 것들)
+}
+
+@include 믹스인 이름(값1, 값2, 값3);
+
+*/
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  margin:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Arguments with @mixin and @include */
+//Buttons Mixin
+@mixin border-style($width, $style, $color) {
+  border: $width $style $color;
+}
+@mixin button-padding($updown, $leftright) {
+  padding: $updown $leftright;
+}
+
+.buttons {
+  button {
+    padding: 7px;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    @include button-padding(20px, 100px);
+    &.approval {
+      @include border-style(2px, solid, blue);
+    }
+    &.refuse {
+      @include border-style(2px, dashed, red)
+    }
+  }
+}
