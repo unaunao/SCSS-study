@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Button Design with @mixin and @include */
+/* Color & Font Variables */
+$complete-btn: royalblue;
+$loading-btn: green;
+$error-btn:crimson;
+$notice-btn-hover: #333;
+$notice-btn-fs:20px;
+
+/* Button Mixin */
+@mixin notice-button {
+  font-size: $notice-btn-fs;
+  width: 150px;
+  padding: 7px;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  &:hover {
+    background-color: $notice-btn-hover;
+    color:#fff;
+    border-color:transparent;
+  }
+  /* &.complete:hover {
+    background-color: $complete-btn;
+  }
+  &.loading:hover {
+    background-color: $loading-btn;
+  }
+  &.error:hover {
+    background-color: $error-btn;
+  } */
+}
+.complete {
+  @include notice-button;
+  border: 3px solid $complete-btn;
+  color: $complete-btn;
+}
+.loading {
+  @include notice-button;
+  border: 3px solid $loading-btn;
+  color: $loading-btn;
+}
+.error {
+  @include notice-button;
+  border: 3px solid $error-btn;
+  color: $error-btn;
+}
