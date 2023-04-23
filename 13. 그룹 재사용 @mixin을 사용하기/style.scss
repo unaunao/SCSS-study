@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+/* @mixin and @inculude */
+/* 
+선언방식
+  @mixin 믹스인 이름{
+    재사용 스타일 속성
+  }
+  
+  선택자 {
+    @include 믹스인 이름; 
+  }
+*/
+@mixin headline {
+  text-align: center;
+  font-size: 36px;
+  text-transform: capitalize;
+  position:relative;
+  padding-bottom: 20px;
+  span {
+    color: royalblue;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: crimson;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.heading {
+  @include headline;
+}
+.news-headline {
+  @include headline;
+}
