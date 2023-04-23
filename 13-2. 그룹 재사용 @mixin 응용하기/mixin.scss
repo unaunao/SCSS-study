@@ -1,0 +1,12 @@
+/* @mixin and @inculude */
+/* 
+선언은 위에 먼저 되어야 합니다.
+*/
+@mixin default {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6em;
+}
