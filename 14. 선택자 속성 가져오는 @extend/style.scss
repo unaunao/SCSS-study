@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+/* 
+선언 방식
+연결 선택자 형태로 css에 표현됨
+사용하는 이유 : 반복되는 클레스 네임을 html에 사용 하지 않아도 됨.
+
+@extend 선택자;
+
+*/
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn {
+  width: 200px;
+  padding: 7px;
+  background-color: #fff;
+  font-size: 18px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border-color: transparent;
+  outline:none;
+  cursor: pointer;
+  color:#fff;
+  // border: 1px solid #000;
+}
+.order {
+  @extend .btn;
+  background-color: purple;
+}
+.add {
+  @extend .btn;
+  background-color: yellowgreen;
+}
+.cheackout {
+  @extend .btn;
+  color: #000;
+  border: 1px solid #000;
+}
