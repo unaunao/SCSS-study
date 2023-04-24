@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+* {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* % Keyword with @extend */
+/* 
+html안에 없는 클레스 네임을 css안에 서만
+사용할 경우 컴파일 된 css파일에는 안보이게 함
+*/
+
+%shape {
+  // border: 1px solid #000;
+  width: 250px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.212);
+}
+
+.card {
+  display: flex;
+  gap: 30px;
+  &-item {
+    @extend %shape;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
