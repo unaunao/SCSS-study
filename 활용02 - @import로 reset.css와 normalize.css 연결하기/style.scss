@@ -1,0 +1,16 @@
+/* Import Reset CSS & Normalize CSS style */
+//  리셋과 노멀 css의 차이점은 노멀은 나름의 스타일은 유지를 한다
+// 리셋보다는 노멀 css를 사용하는게 좋다.
+// 가능하면 내가 하면서 주로 사용하는 것들을 커스텀 리셋 파일을 만들자
+
+// @import "reset";
+// @import "normalize";
+@import "custom-reset";
+
+// section {
+//   h1 {
+//     font-weight: bold;
+//     font-size: 32px;
+//     margin:10px 0;
+//   }
+// }
