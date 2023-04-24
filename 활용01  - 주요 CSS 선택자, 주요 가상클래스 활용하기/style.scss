@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+/* a태그 관련 설명
+link 방문전 링크 상태
+visited 링크 방문했던 상태
+active 클릭했을 때 링크 상태
+hover 클릭 했을 때 링크 상태
+*/ 
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+$items-width: 900px;
+
+/* Text Link Style */
+.text-link {
+  text-decoration: none;
+  color: #000;
+  &:visited {
+    color:purple;
+  }
+  &:active {
+    color: red;
+  }
+  &:hover {
+    color: blue;
+  }
+}
+
+/* Section CSS */
+section {
+  border: 1px solid #000;
+  padding: 20px;
+  h1 {
+    font-weight: normal;
+    font-size: 42px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .section-inner {
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+  }
+  .items {
+    // border: 3px solid blue;
+    width: 900px;
+    display: flex;
+    > div {
+      border: 3px solid green;
+      // float: left;
+      /* 숫자를 변수로 대체했을 때는 괄호를 넣지 않아도 됨 */
+      width: ($items-width / 3);
+      // flex: 1;
+      height: 200px;
+      &:first-child {
+        background-color: crimson;
+      }
+      &:nth-child(2) {
+        background-color: yellowgreen;
+      }
+      &:last-child {
+        background-color: royalblue;
+      }
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+
+    }
+  }
+}
