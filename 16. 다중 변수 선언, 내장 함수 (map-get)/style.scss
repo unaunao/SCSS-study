@@ -1,0 +1,70 @@
+/* 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+/* 영문 폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+body {
+  // font-family: 'Noto Sans KR', sans-serif;
+  // box-sizing: border-box;
+  margin: 0;
+}
+
+/* Built-in Function */
+/* 
+다중 변수를 배열 형태로 표현함
+변수 관리를 효율적으로 할 수 있게 함
+
+>>변수 선언
+
+$변수 이름: (
+  이름: 값,
+  이름: 값,
+  이름: 값
+);
+
+>> 변수 사용방법
+선택자 {
+  태그명 : map-get(변수이름, 변수가 가진 배열 이름);
+}
+
+*/
+
+$color: (
+  font-primary: #2d3436,
+  font-secondary: #636e72,
+  font-focus: #0984e3,
+  bgc-primary:#dfe6e9,
+  bgc-secondary: #b2bec3
+);
+
+$headline-font: (
+  large: 45px,
+  medium: 32px,
+  small: 22px
+);
+$font-family: (
+  kor: 'Noto Sans KR',
+  eng: 'Montserrat'
+);
+
+
+body {
+  font-family: map-get($font-family, kor) , sans-serif;
+  background-color: map-get($color, bgc-primary);
+}
+.frame {
+  h1 {
+    font-family: map-get($font-family, eng), sans-serif;
+    color: map-get($color, font-focus);
+    font-size: map-get($headline-font, large);
+  }
+  h2 {
+    font-family: map-get($font-family, eng), sans-serif;
+    font-size: map-get($headline-font, medium);
+  }
+  h3 {
+    font-family: map-get($font-family, eng), sans-serif;
+    font-size: map-get($headline-font, small);
+  }
+}
