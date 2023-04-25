@@ -1,0 +1,55 @@
+// 공통 속성은 @mixin으로 만들고 나머지 다른 부분을 @extend로 받아와서 만드는 방법
+
+// @extend가 @mixin과 근본적으로 다른이유
+// 믹스인은 믹스인 내부에 선택자를 쓸 수 있음, 매개변수 사용가능
+// 익스텐드는 심플하게 현재 SCSS에서 있는 선택자를 다른 선택자에서 땡겨와서 그 CSS를 사용할때(기존에 있는 css 속성을 땡겨올때 사용)
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// button, input은 직접 폰트를 먹여 줘야 하기 때문에 지금은 전체 선택자에 스타일을 줌
+* {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  font-size: 18px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin:0;
+}
+
+/* Buttons CSS */
+.basic {
+  border: none;
+  background-color: transparent;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 18px;
+  color: #fff;
+  width: 150px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.16);
+  &:hover {
+    box-shadow: none;
+  }
+}
+.succes {
+  @extend .basic;
+  background-color: green;
+}
+.error {
+  @extend .basic;
+  background-color: orange;
+}
+.warning {
+  @extend .basic;
+  background-color: orangered;
+}
+.critical-error {
+  @extend .basic;
+  background-color: red;
+}
