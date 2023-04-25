@@ -1,0 +1,90 @@
+// 플레이스 홀드(%)를 사용하여 CSS 깔끔하게 정리
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* @mixin & @include */
+// @mixin circle-box {
+//   border: 5px solid #000;
+//   width: 200px;
+//   height: 200px;
+//   border-radius: 50%;
+//   display: inline-block;
+// }
+// .items {
+//   .item {
+//     @include circle-box;
+//     &:nth-child(1) {
+//       background-color: royalblue;
+//     }
+//     &:nth-child(2) {
+//       background-color: yellowgreen;
+//     }
+//     &:nth-child(3) {
+//       background-color: crimson;
+//     }
+//   }
+// }
+// 이런식의 네스팅 되지 않는 선택자를 많이 만들지 말것
+// .item1, .item2, .item3 {
+//   @include circle-box;
+// }
+// .item1 {
+//   background-color: royalblue;
+// }
+// .item2 {
+//   background-color: yellowgreen;
+// }
+// .item3 {
+//   background-color: crimson;
+// }
+
+/* Extend 방식*/
+// 이 방식으로 할 경우 html에 없는 .circle-box선택자가 css에 노출되게 됨
+// .circle-box {
+//   border: 5px solid #000;
+//   width: 200px;
+//   height: 200px;
+//   border-radius: 50%;
+//   display: inline-block;
+// }
+// .items {
+//   div {
+//     @extend .circle-box;
+//     &:nth-child(1) {
+//       background-color: royalblue;
+//     }
+//     &:nth-child(2) {
+//       background-color: yellowgreen;
+//     }
+//     &:nth-child(3) {
+//       background-color: crimson;
+//     }
+//   }
+// }
+
+/* Placeholder % */
+// 스타일 사용용으로 만든 선택자에 %를 붙이고 이것을 사용시에도 붙어준다.
+%circle-box {
+  border: 5px solid #000;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.items {
+  div {
+    @extend %circle-box;
+    &:nth-child(1) {
+      background-color: red;
+    }
+    &:nth-child(2) {
+      background-color: yellowgreen;
+    }
+    &:nth-child(3) {
+      background-color: crimson;
+    }
+  }
+}
