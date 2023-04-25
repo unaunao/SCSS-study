@@ -1,0 +1,47 @@
+// 자주 사용하는 이팩트
+// 박스 쉐도우 같은 것들을 미리 믹스인으로 만들어 놓고 필요할 때마다 인클루드로 재사용 하기 
+
+
+// Mixin
+@mixin shadow-item {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.items {
+  display: flex;
+  gap: 40px;
+  > div {
+    flex:1;
+    height: 400px;
+    border-radius: 10px;
+    overflow:hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    transition: 0.5s;
+    &:hover {
+      @include shadow-item;
+      transform: translateY(-15px);
+    }
+    a {
+      display: block;
+      width: inherit;
+      width: -moz-available;
+      height: inherit;
+      img {
+        width: inherit;
+        width: -webkit-fill-available;
+        height: inherit;
+        // object-fit 사용시 부모 요서의 너비와 높이가 있어야 함
+        // 자신도 높이와 넓이가 있어야 함
+        object-fit:cover;
+      }
+    }
+  }
+}
