@@ -1,0 +1,41 @@
+/* 
+사용법
+
+@mixin 믹스인이름($매개변수1, $매개변수2, $매개변수3, $매개변수4) {
+  표현식
+}
+
+// 인클루드에 반환할 값을 믹스인 매개변수 값을 맞춰서 같게 넣어 줘야 함
+@include 믹스인이름(전당할 값1, 전당할 값2, 전당할 값3, 전당할 값4);
+
+*/
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+@mixin links($link, $visited, $active, $hover) {
+  a {
+    text-decoration: none;
+    color: $link;
+    &:visited {
+      color: $visited;
+    }
+    &:active {
+      color: $active;
+    }
+    &:hover {
+      color: $hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  @include links(black, gold, yellow, crimson);
+}
