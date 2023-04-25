@@ -1,0 +1,44 @@
+// Border Radius Mixin
+@mixin bdrs($radius) {
+  border-radius: $radius;
+}
+.frame {
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    border: 10px solid gold;
+    background-color: deepskyblue;
+    color: #fff;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:nth-child(1){
+      @include bdrs(20px);
+    }
+    &:nth-child(2){
+      @include bdrs(50px);
+    }
+    &:nth-child(3){
+      @include bdrs(100%);
+    }
+    &:nth-child(4){
+      @include bdrs(50px 0 50px 0);
+    }
+    &:nth-child(5){
+      @include bdrs(100% 0 0 0);
+    }
+    &:nth-child(6){
+      @include bdrs(50% 50% 50% 0);
+    }
+    &:nth-child(7){
+      @include bdrs(100% 0 100% 0);
+    }
+    &:nth-child(8){
+      @include bdrs(50% 50% 0 0);
+    }
+  }
+}
